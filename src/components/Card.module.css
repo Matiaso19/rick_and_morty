@@ -1,0 +1,52 @@
+.environmentCard {
+    width: 320px;
+    height: auto;
+    border: 0.5px solid white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1em;
+    background: rgb(146,191,242);
+background: -moz-linear-gradient(left, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgb(146,191,242)), color-stop(67%, rgb(4,246,137)), color-stop(100%, rgb(156,197,242)));
+background: -webkit-linear-gradient(left, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+background: -o-linear-gradient(left, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+background: -ms-linear-gradient(left, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+background: linear-gradient(to right, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92bff2', endColorstr='#9cc5f2', GradientType=1 );
+    
+}
+
+.buttonClose {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: rgb(68, 128, 218);
+    
+}
+
+.nombre {
+    position: absolute;
+    color: whitesmoke;
+    background-color: rgb(69, 61, 219);
+    left: -5px;
+    bottom: 300px;
+    border: 0.5px;
+    
+}
+
+.props {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

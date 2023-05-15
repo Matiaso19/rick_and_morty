@@ -1,0 +1,22 @@
+.nav {
+    background-color: rgb(146,191,242);
+background: -moz-linear-gradient(left, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgb(146,191,242)), color-stop(67%, rgb(4,246,137)), color-stop(100%, rgb(156,197,242)));
+background: -webkit-linear-gradient(left, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+background: -o-linear-gradient(left, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+background: -ms-linear-gradient(left, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+background: linear-gradient(to right, rgb(146,191,242) 0%, rgb(4,246,137) 67%, rgb(156,197,242) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92bff2', endColorstr='#9cc5f2', GradientType=1 );
+width: 100vw;
+height: 4em;
+display: flex;
+
+margin: 1em 0em 1em 0em;
+justify-content:flex-end;
+float: right;
+border: none;
+margin-top: 0.5em;
+
+border-radius: 5px;
+margin-left: 100px;
+}

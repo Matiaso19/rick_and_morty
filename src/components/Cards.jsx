@@ -1,8 +1,8 @@
 import Card from './Card';
-
+import style from './Cards.module.css';
 export default function Cards({characters}) {
    return (
-   <div>
+   <div className={style.cardsDiv}>
       {characters.map(elemento => {
          return (
             <Card 

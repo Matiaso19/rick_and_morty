@@ -1,0 +1,19 @@
+
+.input {
+    width: 25em;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 0.5em;
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+.agregar {
+    width: 20em;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-left: 0.5em;
+    font-size: 1em;
+    font-weight: 500;
+
+}
