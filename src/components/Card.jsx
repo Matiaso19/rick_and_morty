@@ -4,7 +4,7 @@ export default function Card(props) {
       <div className={style.environmentCard}>
          
          
-         <button onClick={props.onClose} className={style.buttonClose}>X</button>
+         <button onClick={()=>props.onClose(props.id)} className={style.buttonClose}>X</button>
          <div>
          <h2 className={style.nombre}>{props.name}</h2>
          </div>
