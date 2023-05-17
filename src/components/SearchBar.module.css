@@ -1,11 +1,12 @@
 
 .input {
-    width: 25em;
+    width: 10em;
     font-weight: 500;
     border-radius: 5px;
     padding: 0.5em;
     font-size: 1em;
     margin-top: 0.5em;
+    margin-left: 0.5em;
 }
 
 .agregar {

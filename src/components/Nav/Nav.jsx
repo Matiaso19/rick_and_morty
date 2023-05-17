@@ -9,11 +9,11 @@ const Nav = ({onSearch}) => {
         <div className={style.nav}>
           <NavLink to='/about'>
 
-            <button>About</button>
+            <button className={style.about}>About</button>
           </NavLink>
           <NavLink to='/home'>
 
-            <button>Home</button>
+            <button className={style.home}>Home</button>
           </NavLink>
           
 
