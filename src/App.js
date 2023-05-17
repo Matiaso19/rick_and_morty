@@ -35,11 +35,16 @@ function App() {
 
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+      if(!characters.find(char => char.id === data.id)) {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
             window.alert('¡No hay personajes con este ID!');
          }
+         }
+      else {
+         alert(`Ya existe el personaje con el id ${id}!!`)
+      }
       });
    }
 
