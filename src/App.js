@@ -8,10 +8,12 @@ import Cards from './components/Cards.jsx';
 //import characters from './data.js';
 import style from './App.module.css'
 import Nav from './components/Nav/Nav.jsx';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import { Error404 } from './components/Error404/Error404.jsx';
+import { Form } from './components/Form/Form.jsx';
+
 
 
 
@@ -52,10 +54,16 @@ function App() {
    const onClose = (id) => {
       setCharacters(characters.filter(char => char.id !== Number(id)))
    }
+
+   const location = useLocation();
+   
    return (
       <div className={style.App}>
-         <Nav  onSearch={onSearch}/>
+         {(location.pathname !== '/' && <Nav  onSearch={onSearch}/>)}
+         
          <Routes>
+
+         <Route path='/' element={<Form />}/>
          <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
          <Route path='/about' element={<About />}   />
          <Route path='/detail/:id' element={<Detail />}   />

@@ -7,6 +7,10 @@ import { Link, NavLink } from "react-router-dom";
 const Nav = ({onSearch}) => {
     return (
         <div className={style.nav}>
+          <NavLink to={'/'}>
+            <button className={style.inicio}>Inicio</button>
+
+          </NavLink>
           <NavLink to='/about'>
 
             <button className={style.about}>About</button>
