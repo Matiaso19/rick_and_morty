@@ -35,7 +35,7 @@ function App() {
    
    const navigate = useNavigate();
    const [access, setAccess] = useState(false);
-   const email = 'matiasscrog@gmail.com';
+   const email = 'callefalsa123@gmail.com';
    const password = '123456';
 
    function login(userData) {
@@ -43,7 +43,15 @@ function App() {
          setAccess(true);
          navigate('/home');
       }
+      else {
+         alert('Datos Incorrectos')
+      }
    }
+function logOut() {
+   setAccess(false);
+   
+}
+
    useEffect(() => {
       !access && navigate('/');
    }, [access]);
@@ -80,7 +88,7 @@ function App() {
 
          <Route path='/' element={<Form login={login} />}/>
          
-         <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
+         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
          <Route path='/about' element={<About />}   />
          <Route path='/detail/:id' element={<Detail />}   />
          <Route path='*' element={<Error404 />} />

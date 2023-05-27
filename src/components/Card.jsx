@@ -1,11 +1,35 @@
 import style from './Card.module.css'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addFav, removeFav } from '../redux/actions';
+import { useState } from 'react';
 
-export default function Card(props) {
+function Card(props) {
+
+   const [isFav, setIsFav] = useState(false);
+
+   function handleFavorite() {
+      if(isFav) {
+         setIsFav(false)
+         props.removeFav(props.id)
+      }
+      else {
+         setIsFav(true);
+         props.addFav(props)
+      }
+         
+   }
+
    return (
       <div className={style.environmentCard}>
          
-         
+            {
+            isFav ? (
+               <button onClick={handleFavorite}>❤️</button>
+            ) : (
+               <button onClick={handleFavorite}>🤍</button>
+            )
+            }
          <button onClick={()=>props.onClose(props.id)} className={style.buttonClose}>X</button>
          <div>
             <Link to={`/detail/${props.id}`}>
@@ -27,3 +51,12 @@ export default function Card(props) {
          
    );
 }
+
+function mapDispatchToProps(dispatch) {
+   return {
+      addFav: (personaje) => dispatch(addFav(personaje)),
+      removeFav: (id) => dispatch(removeFav(id))
+   }
+};
+
+export default connect(null, mapDispatchToProps)(Card)
