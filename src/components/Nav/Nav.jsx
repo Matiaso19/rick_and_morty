@@ -15,6 +15,11 @@ const Nav = ({onSearch}) => {
 
             <button className={style.about}>About</button>
           </NavLink>
+          <NavLink to='/favorites'>
+
+            <button className={style.about}>Favorites</button>
+          </NavLink>
+
           <NavLink to='/home'>
 
             <button className={style.home}>Home</button>

@@ -13,6 +13,7 @@ import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import { Error404 } from './components/Error404/Error404.jsx';
 import { Form } from './components/Form/Form.jsx';
+import Favorites from './components/Favorites/Favorites.jsx';
 
 
 
@@ -49,6 +50,7 @@ function App() {
    }
 function logOut() {
    setAccess(false);
+   navigate('/')
    
 }
 
@@ -81,7 +83,7 @@ function logOut() {
    
    return (
       <div className={style.App}>
-         {(location.pathname !== '/' && <Nav  onSearch={onSearch}/>)}
+         {(location.pathname !== '/' && <Nav  onSearch={onSearch} />)}
          
          <Routes>
          
@@ -90,6 +92,7 @@ function logOut() {
          
          <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
          <Route path='/about' element={<About />}   />
+         <Route path='/favorites' element={<Favorites onClose={onClose}/>}   />
          <Route path='/detail/:id' element={<Detail />}   />
          <Route path='*' element={<Error404 />} />
          

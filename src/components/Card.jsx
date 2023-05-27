@@ -2,7 +2,7 @@ import style from './Card.module.css'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFav, removeFav } from '../redux/actions';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Card(props) {
 
@@ -19,6 +19,14 @@ function Card(props) {
       }
          
    }
+   
+   useEffect(() => {
+      props.myFavorites.forEach((fav) => {
+         if (fav.id === props.id) {
+            setIsFav(true);
+         }
+      });
+   }, [props.myFavorites]);
 
    return (
       <div className={style.environmentCard}>
@@ -59,4 +67,10 @@ function mapDispatchToProps(dispatch) {
    }
 };
 
-export default connect(null, mapDispatchToProps)(Card)
+function mapStateToProps(state){
+   return {
+      myFavorites: state.myFavorites
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card)
