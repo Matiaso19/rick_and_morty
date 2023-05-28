@@ -5,29 +5,31 @@ import { Link, NavLink } from "react-router-dom";
 import App from "../../App";
 
 
-const Nav = ({onSearch, logOut}) => {
+const Nav = (props) => {
+  
     return (
         <div className={style.nav}>
           <NavLink to={'/'}>
             <button className={style.inicio}>Inicio</button>
 
           </NavLink>
-          <NavLink to='/about'>
-
-            <button className={style.about}>About</button>
-          </NavLink>
-          <NavLink to='/favorites'>
-
-            <button className={style.about}>Favorites</button>
-          </NavLink>
-
           <NavLink to='/home'>
 
             <button className={style.home}>Home</button>
           </NavLink>
+
+          <NavLink to='/favorites'>
+            <button className={style.about}>Favorites</button>
+          </NavLink>
           
-        <SearchBar onSearch={onSearch} />
-        <button className={style.logOut}>Log Out</button>
+          <NavLink to='/about'>
+
+            <button className={style.about}>About</button>
+          </NavLink>
+
+          
+        <SearchBar onSearch={props.onSearch} />
+        <button className={style.logOut} onClick={props.logOut}>Log Out</button>
         </div> 
     )
 }
