@@ -2,9 +2,10 @@ import React from "react"
 import SearchBar from "../SearchBar"
 import style from './Nav.module.css'
 import { Link, NavLink } from "react-router-dom";
+import App from "../../App";
 
 
-const Nav = ({onSearch}) => {
+const Nav = ({onSearch, logOut}) => {
     return (
         <div className={style.nav}>
           <NavLink to={'/'}>
@@ -25,8 +26,8 @@ const Nav = ({onSearch}) => {
             <button className={style.home}>Home</button>
           </NavLink>
           
-
         <SearchBar onSearch={onSearch} />
+        <button className={style.logOut}>Log Out</button>
         </div> 
     )
 }

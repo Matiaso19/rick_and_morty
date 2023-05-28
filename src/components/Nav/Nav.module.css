@@ -10,6 +10,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92bff2', end
 width: 100vw;
 height: 4em;
 display: flex;
+flex-direction: row;
 
 margin: 1em 0em 1em 0em;
 justify-content:center;
@@ -21,7 +22,7 @@ border-radius: 5px;
 margin-left: 100px;
 }
 .about {
-    width: 20em;
+    width: 10em;
     padding: 0.5em;
     border-radius: 5px;
     margin-left: 0.5em;
@@ -31,7 +32,7 @@ margin-left: 100px;
 
 }
 .home {
-    width: 20em;
+    width: 10em;
     padding: 0.5em;
     border-radius: 5px;
     margin-left: 0.5em;
@@ -42,12 +43,26 @@ margin-left: 100px;
 }
 
 .inicio {
-    width: 20em;
+    width: 10em;
     padding: 0.5em;
     border-radius: 5px;
     margin-left: 0.5em;
     font-size: 1em;
     font-weight: 500;
     margin-top: 0.5em;
+
+}
+.logOut {
+    width: 10em;
+    height: 2.4em;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-left: 0.5em;
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 0.5em;
+    background-color: rgb(53, 75, 163);
+    color: white;
+    
 
 }
