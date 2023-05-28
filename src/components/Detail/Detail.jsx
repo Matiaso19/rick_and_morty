@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import style from './Detail.module.css'
 
 const Detail = () => {
+    const navigate = useNavigate();
+    
+    
     
     const { id } = useParams();
     
@@ -20,15 +24,24 @@ const Detail = () => {
         return setCharacter({});
      }, [id]);
 
+
+
     return (
         <div>
+            <button onClick={()=>{navigate('/home')}}>Volver</button>
+            <div className={style.contenedor}>
+
             <h1>Name:{character.name}</h1>
             <h1>{character.status}</h1>
             <h1>{character.species}</h1>
             <h1>{character.gender}</h1>
             <h1>{character.origin?.name}</h1>
-            <img src={character.image} alt="" />
             
+            </div>
+            <div>
+
+            <img src={character.image} alt="" />
+            </div>
         </div>
     );
 };
