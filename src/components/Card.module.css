@@ -50,3 +50,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92bff2', end
     justify-content: center;
     align-items: center;
 }
+.link {
+    text-decoration: none;
+    color: inherit;
+}

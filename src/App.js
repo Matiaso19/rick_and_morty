@@ -80,7 +80,7 @@ function logOut() {
    }
 
    const location = useLocation();
-   console.log(location)
+   
    
    return (
       <div className={style.App}>

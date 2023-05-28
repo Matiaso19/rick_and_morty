@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const Detail = () => {
+    
     const { id } = useParams();
+    
     const [character, setCharacter] = useState({});
 
 

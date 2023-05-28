@@ -39,11 +39,10 @@ function Card(props) {
             )
             }
          <button onClick={()=>props.onClose(props.id)} className={style.buttonClose}>X</button>
-         <div>
-            <Link to={`/detail/${props.id}`}>
+         
+            <Link className={style.link} to={`/detail/${props.id}`}>
          <h2 className={style.nombre}>{props.name}</h2>
-            </Link>
-         </div>
+         
 
          <img src={props.image} alt={props.name}/> 
          <div className={style.props}>
@@ -55,6 +54,7 @@ function Card(props) {
          </div>
          
          
+            </Link>
       </div>
          
    );
