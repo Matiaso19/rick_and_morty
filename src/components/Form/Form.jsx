@@ -24,19 +24,19 @@ export const Form = (props) => {
     }
 
   return (
-    <div className={style.fondo}>
-        <div className={style.formulario}>
+    <div>
+        <div className={style.container}>
 
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">EMAIL</label>
-            <input type="text" name='email' placeholder='Ingresa tu email' onChange={handleChange} value={userData.email} className={style.input}/>
+        <form onSubmit={handleSubmit} className={style.formulario}>
+            <label htmlFor="email">EMAIL: </label>
+            <input type="text" name='email' placeholder='Ingresa tu email' onChange={handleChange} value={userData.email} className={errors.email && style.warning}/>
             <p className={style.danger}>{errors.email}</p>
             <br />
-            <label htmlFor="password">PASSWORD</label>
-            <input type="password" name='password' placeholder='Ingresa tu contraseña'onChange={handleChange} value={userData.password} className={style.input}/>
+            <label htmlFor="password">PASSWORD: </label>
+            <input type="password" name='password' placeholder='Ingresa tu contraseña'onChange={handleChange} value={userData.password} className={errors.password && style.warning} />
             <p className={style.danger}>{errors.password}</p>
             
-            <button type='submit' className={style.submit}>SUBMIT</button>
+            <button type='submit'>LOGIN</button>
         </form>
         </div>
     </div>

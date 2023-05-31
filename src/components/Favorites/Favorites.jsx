@@ -1,17 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../Card';
-import { connect } from 'react-redux';
-import { removeFav } from '../../redux/actions';
+import { connect, useDispatch } from 'react-redux';
+import { removeFav, filterCards, orderCards, reset } from '../../redux/actions';
+import style from './Favorites.module.css'
+
+
+
 
 function Favorites({ myFavorites, onClose, removeFav }) {
+
+    const [aux, setAux] = useState(false);
 
     function closeFavorite(id) {
         onClose(id);
         removeFav(id)
     }
 
+    const dispatch = useDispatch();
+
+    function handleOrder(evento) {
+        dispatch(orderCards(evento.target.value))
+        setAux(!aux)
+    }
+    function handleFilter(evento) {
+        dispatch(filterCards(evento.target.value))
+    }
+    function resetButton() {
+        dispatch(reset())
+    }
+
+
   return (
-    <div>
+    <div className={style.FavsDiv}>
+        <div className={style.select}>
+
+        <select onChange={handleOrder}>
+        <option value="A">Ascendente</option>
+        <option value="D">Descendente</option>
+        </select>
+        <select onChange={handleFilter}>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Genderless">Genderless</option>
+        <option value="unknown">unknown</option>
+        </select>
+        <button onClick={resetButton}>Reset</button>
+        </div>
+
         {
         myFavorites.map(elemento => {
          return (

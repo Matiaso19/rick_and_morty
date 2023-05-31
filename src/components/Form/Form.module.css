@@ -1,16 +1,24 @@
 .formulario {
     display: flex;
-
-    margin: auto;
+    
+    margin: 50px;
     background-color: rgb(16, 47, 115);
-    width: 25%;
-    margin-top: 50px;
+    width: fit-content;
+    height: fit-content;
+    
     padding: 25px;
     border-radius: 10px;
     
-
-
     
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+.container {
+    display: flex;
+    align-items: center;
+}
     
     
 }
@@ -39,4 +47,9 @@
 }
 .danger {
     color: red;
+}
+
+.warning {
+    border: red solid 1px;
+    
 }

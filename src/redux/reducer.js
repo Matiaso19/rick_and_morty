@@ -1,7 +1,8 @@
-import { ADD_FAV, REMOVE_FAV } from "./types";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, RESET } from "./types";
 
 const initialState = {
     myFavorites: [],
+    allCharacters: [],
 }
 
 const rootReducer = (state=initialState, action) => {
@@ -9,22 +10,55 @@ const rootReducer = (state=initialState, action) => {
             case ADD_FAV:
                 return {
                     ...state,
-                    myFavorites: [...state.myFavorites, action.payload]
+                    myFavorites: [...state.allCharacters, action.payload],
+                    allCharacters: [...state.allCharacters, action.payload],
                 }
         
             case REMOVE_FAV:
                 return {
                     ...state,
-                    myFavorites: state.myFavorites.filter((elemento) => elemento.id !== action.payload)
+                    myFavorites: state.myFavorites.filter((elemento) => elemento.id !== action.payload),
+                    allCharacters: state.myFavorites.filter((elemento) => elemento.id !== action.payload)
                 }
-        
-            default:
+            case FILTER:
                 return {
                     ...state,
+                    myFavorites: state.allCharacters.filter((elemento) => elemento.gender === action.payload)
                 }
+            case ORDER:
+                const filtered = state.allCharacters;
+                const order = filtered.sort((a, b) => {
+                    if(action.payload === 'A') {
+                        return a.id - b.id
+                    }
+                    else {
+                        return b.id - a.id
+                    }
+                    
+                })
+                return {
+                    ...state, 
+                    myFavorites: order
+                }
+                case RESET:
+                    return {
+                        ...state,
+                        myFavorites: [...state.allCharacters],
+                    }
+                
+            
+                default:
+                    return {
+                        ...state,
+                    }
+            }
         }
-    }
+    
+    
+    
+    export default rootReducer;
+                    
+                
 
+                
 
-
-export default rootReducer;

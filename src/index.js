@@ -15,3 +15,15 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
+
+/*const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+
+  <Provider>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+  </Provider>
+
+);*/
