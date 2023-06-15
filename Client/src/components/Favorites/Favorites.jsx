@@ -57,7 +57,7 @@ function Favorites({ myFavorites, onClose, removeFav }) {
             status= {elemento.status}
             species= {elemento.species}
             gender= {elemento.gender}
-            origin= {elemento.origin.name}
+            origin= {elemento.origin?.name}
             image= {elemento.image}
             onClose={()=> closeFavorite(elemento.id)}
             
