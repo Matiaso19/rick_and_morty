@@ -39,14 +39,23 @@ function App() {
    //const email = 'callefalsa123@gmail.com';
    //const password = '123456';
 
-   function login(userData) {
+   async function login(userData) {
+      try {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
-         setAccess(data);
-         access && navigate('/home');
-      });
+      const QUERY =  `?email=${email}&password=${password}`
+      const { data } = await axios(URL + QUERY)
+      const { access } = data;
+      setAccess(data);
+      access && navigate('/home');
+      
+
+
+      }
+      catch (error) {
+         return { error: error.message}
+      }
+      
    }
 
 function logOut() {
@@ -61,24 +70,30 @@ function logOut() {
 
 
 
-   function onSearch(id) {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-      if(!characters.find(char => char.id === data.id)) {
-         if (data.name) {
-            
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            alert('¡No hay personajes con este ID!');
+   async function onSearch(id) {
+      try {
+   const  url = 'http://localhost:3001/rickandmorty/character/' + id;
+   const { data } = await axios(url)  
+   const char = characters?.find(e => e.id === data.id) // ver si es necesario el NUMBER(id)
+   if(char) {
+      alert('El personaje ya esta en la lista!')
+   }
+   else if(data.id !== undefined) {
+      setCharacters((oldChars) => [...oldChars, data]);
+   } else {
+            alert('Character not Found');
          }
-         }
-      else {
-         alert(`Ya existe el personaje con el id ${id}!!`)
+       
+
+      } catch (error) {
+         return { error: error.message}
       }
-      });
+   
+   
    }
 
    const onClose = (id) => {
-      setCharacters(characters.filter(char => char.id !== Number(id)))
+      setCharacters(characters.filter(char => char.id != id))
    }
 
    const location = useLocation();
