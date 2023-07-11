@@ -1,6 +1,6 @@
 
 .input {
-    width: 10em;
+    width: 20em;
     font-weight: 500;
     border-radius: 5px;
     padding: 0.5em;
@@ -10,11 +10,24 @@
 }
 
 .agregar {
-    width: 20em;
+    width: 10em;
     padding: 0.5em;
     border-radius: 5px;
     margin-left: 0.5em;
     font-size: 1em;
     font-weight: 500;
+    cursor: zoom-in;
 
+    transition: background-color 0.3s ease, transform 0.3s;
+    border: 2px solid rgb(21, 185, 231);
 }
+.agregar:hover {
+    background-color: hsl(94, 89%, 46%);
+    color: white;
+    transform: scale(1.1);
+    border: none;
+    
+}
+
+
+

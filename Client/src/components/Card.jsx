@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFav, removeFav } from '../redux/actions';
 import { useEffect, useState } from 'react';
+import { FaHeart } from 'react-icons/fa'
+
+
+
 
 function Card(props) {
 
@@ -31,26 +35,30 @@ function Card(props) {
    return (
       <div className={style.environmentCard}>
          
+
             {
             isFav ? (
-               <button onClick={handleFavorite}>❤️</button>
+               <button className={style.corazon} onClick={handleFavorite}>
+                  ❤️
+                  </button>
             ) : (
-               <button onClick={handleFavorite}>🤍</button>
+               <button className={style.corazon} onClick={handleFavorite}>🤍</button>
             )
             }
+         
          <button onClick={()=>props.onClose(props.id)} className={style.buttonClose}>X</button>
          
             <Link className={style.link} to={`/detail/${props.id}`}>
          <h2 className={style.nombre}>{props.name}</h2>
          
 
-         <img src={props.image} alt={props.name}/> 
+         <img className={style.imagen} src={props.image} alt={props.name}/> 
          <div className={style.props}>
 
-         <h2>Status: {props.status}</h2>
-         <h2>Specie: {props.species}</h2>
-         <h2>Gender: {props.gender}</h2>
-         <h2>Origin: {props.origin}</h2>
+         <h2> <span className={style.datos}>Status:</span> {props.status}</h2>
+         <h2><span className={style.datos}>Specie:</span> {props.species}</h2>
+         <h2><span className={style.datos}>Gender:</span> {props.gender}</h2>
+         <h2><span className={style.datos}>Origin:</span> {props.origin}</h2>
          </div>
          
          

@@ -10,7 +10,7 @@ const Nav = (props) => {
     return (
         <div className={style.nav}>
           <NavLink to={'/'}>
-            <button className={style.inicio}>Inicio</button>
+            <button className={style.inicio}>Login</button>
 
           </NavLink>
           <NavLink to='/home'>

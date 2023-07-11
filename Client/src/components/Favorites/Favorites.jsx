@@ -31,24 +31,34 @@ function Favorites({ myFavorites, onClose, removeFav }) {
 
 
   return (
-    <div className={style.FavsDiv}>
-        <div className={style.select}>
+        <div className={style.FavsDiv}>
+      <div className={style.input}>
 
         <select onChange={handleOrder}>
-        <option value="A">Ascendente</option>
-        <option value="D">Descendente</option>
+        <option value="A">Sort from lowest to highest</option>
+        <option value="D">Sort from highest to lowest</option>
         </select>
+        </div>
+        <div className={style.input}>
+
+
         <select onChange={handleFilter}>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="Genderless">Genderless</option>
         <option value="unknown">unknown</option>
         </select>
+        </div>
+        <div>
+
         <button onClick={resetButton}>Reset</button>
         </div>
 
         {
         myFavorites.map(elemento => {
+            //if(elemento.id) {
+
+            
          return (
             <Card 
             key= {elemento.id}
@@ -63,6 +73,7 @@ function Favorites({ myFavorites, onClose, removeFav }) {
             
             />
          )
+           // }
       })
       }
     </div>

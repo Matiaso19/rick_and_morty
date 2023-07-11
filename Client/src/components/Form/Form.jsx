@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import style from './Form.module.css';
 import { validation } from './validation';
+import imagenTunel from '../../imagenes/homeworkRAM.jpg'
 
 export const Form = (props) => {
     const [userData, setUserData] = useState({
@@ -24,9 +25,11 @@ export const Form = (props) => {
     }
 
   return (
-    <div>
+      <div className={style.general}>
         <div className={style.container}>
+        
 
+        
         <form onSubmit={handleSubmit} className={style.formulario}>
             <label htmlFor="email">EMAIL: </label>
             <input type="text" name='email' placeholder='Ingresa tu email' onChange={handleChange} value={userData.email} className={errors.email && style.warning}/>
@@ -36,7 +39,7 @@ export const Form = (props) => {
             <input type="password" name='password' placeholder='Ingresa tu contraseña'onChange={handleChange} value={userData.password} className={errors.password && style.warning} />
             <p className={style.danger}>{errors.password}</p>
             
-            <button type='submit'>LOGIN</button>
+            <button className={style.login} type='submit'>LOGIN</button>
         </form>
         </div>
     </div>

@@ -28,19 +28,22 @@ const Detail = () => {
 
     return (
         <div>
-            <button onClick={()=>{navigate('/home')}}>Volver</button>
-            <div className={style.contenedor}>
+            <div className={style.Detail}>
 
-            <h1>Name: {character.name}</h1>
-            <h1>Status: {character.status}</h1>
-            <h1>Specie: {character.species}</h1>
-            <h1>Gender: {character.gender}</h1>
-            <h1>Origin: {character.origin?.name}</h1>
-            
+            <div className={style.contenedor}>
+            <img className={style.image} src={character.image} alt="Character Image" />
+            <div className={style.elements}>
+            <h1><span className={style.keys}>Name:</span>  {character.name}</h1>
+            <h1><span className={style.keys}>Status:</span> {character.status}</h1>
+            <h1><span className={style.keys}>Specie:</span> {character.species}</h1>
+            <h1><span className={style.keys}>Gender:</span> {character.gender}</h1>
+            <h1><span className={style.keys}>Origin:</span> {character.origin?.name}</h1>
             </div>
+            </div>
+            </div>
+            <button className={style.button} onClick={()=>{navigate('/home')}}>Volver</button>
             <div>
 
-            <img src={character.image} alt="" />
             </div>
         </div>
     );

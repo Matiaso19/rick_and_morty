@@ -15,8 +15,8 @@ export default function SearchBar(props) {
       <div className={styles.environmentSearch}>
          <>
          <div>
-
-         <input className={styles.input} type='search' onChange={handleChange} value={id} />
+      
+         <input className={styles.input} placeholder='Ingresa un número' type='search' onChange={handleChange} value={id} />
          <button className={styles.agregar} onClick={() => {props.onSearch(id)}}>Search</button>
          
          </div>
